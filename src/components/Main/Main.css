@@ -110,6 +110,10 @@
     gap: 15px;
 }
 
+.search-box img{
+  cursor: pointer;
+}
+
 .bottom-info{
     font-size: 13px;
     margin: 15px auto;
@@ -143,4 +147,30 @@
     display: flex;
     align-items: start;
     gap: 20px;
+}
+
+.loader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr{
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s infinite linear;
+}
+
+@keyframes looader {
+   0%{
+    background-position: -800px 0px;
+   } 
+   100%{
+    background-position: 800px 0px;
+   }
 }

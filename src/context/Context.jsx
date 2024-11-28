@@ -1,7 +1,8 @@
 import { createContext, useState } from "react";
 import runChat from "../config/gemini";
-
+import PropTypes from 'prop-types';
 export const Context = createContext();
+
 
 const ContextProvider = (props) => {
     const [input, setInput] = useState('');
@@ -37,5 +38,10 @@ const ContextProvider = (props) => {
         </Context.Provider>
     )
 }
+
+// Adding propTypes for validation
+ContextProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 
 export default ContextProvider;

@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 import './Main.css'
 import { Context } from '../../context/Context'
 const Main = () => {
-    const {onSent, recent, showResult, loading, resultData, setInput,input} = useContext(Context)
+    const {onSent, recent, showResult, loading, resultData,setInput,input} = useContext(Context)
   return (
     <div className='main'>
         <nav className='nav'>
@@ -41,7 +41,12 @@ const Main = () => {
                     <p>{recent}</p>
                     <div className="result-data">
                         <img src={assets.gemini_icon} alt="" />
-                        <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+                        {loading ? 
+                        <div className='loader'>
+                            <hr />
+                            <hr />
+                            <hr />
+                        </div> :  <p dangerouslySetInnerHTML={{__html:resultData}}></p> }
                     </div>
                 </div>
             </div>
