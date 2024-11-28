@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import runChat from "../config/gemini";
 import PropTypes from 'prop-types';
+// Issue with context - need to check
 export const Context = createContext();
 
 
@@ -32,6 +33,7 @@ const ContextProvider = (props) => {
         input,
         setInput
     }
+    // Prop types
     return(
         <Context.Provider value={contextValue}>
             {props.children}
